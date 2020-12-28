@@ -71,50 +71,50 @@ export default {
 }
 </script>
 
-<!--<style lang="scss" scoped>-->
-<!--.appeals {-->
-<!--    padding: 60px 0;-->
-<!--    flex-wrap: wrap;-->
-<!--    &__wrap {-->
-<!--        min-height: 74vh;-->
-<!--        margin-top: 60px;-->
-<!--    }-->
-<!--    &__item {-->
-<!--        width: 51%;-->
-<!--        margin: 20px auto;-->
-<!--        border-bottom: 1px solid rgba(44, 62, 80, 0.36);-->
-<!--        padding: 10px 0;-->
-<!--     }-->
-<!--    &__name {-->
-<!--        display: flex;-->
-<!--        p {-->
-<!--            width: 220px;-->
-<!--        }-->
-<!--    }-->
-<!--    &__text {-->
-<!--        display: flex;-->
-<!--        p {-->
-<!--            width: 220px;-->
-<!--        }-->
-<!--    }-->
-<!--    &__communication {-->
-<!--        display: flex;-->
-<!--    }-->
-<!--}-->
-<!--.communication {-->
-<!--    &__head {-->
-<!--        width: 220px;-->
-<!--    }-->
-<!--}-->
-<!--@media (max-width: 991px) {-->
-<!--  .appeals {-->
-<!--    &__item {-->
-<!--      width: 100%;-->
-<!--      padding: 15px;-->
-<!--    }-->
-<!--    &__wrap {-->
-<!--      margin-top: 0;-->
-<!--    }-->
-<!--  }-->
-<!--}-->
-<!--</style>-->
+<style lang="less" scoped>
+.appeals {
+    padding: 60px 0;
+    flex-wrap: wrap;
+    &__wrap {
+        min-height: 74vh;
+        margin-top: 60px;
+    }
+    &__item {
+        width: 51%;
+        margin: 20px auto;
+        border-bottom: 1px solid rgba(44, 62, 80, 0.36);
+        padding: 10px 0;
+     }
+    &__name {
+        display: flex;
+        p {
+            width: 220px;
+        }
+    }
+    &__text {
+        display: flex;
+        p {
+            width: 220px;
+        }
+    }
+    &__communication {
+        display: flex;
+    }
+}
+.communication {
+    &__head {
+        width: 220px;
+    }
+}
+@media (max-width: 991px) {
+  .appeals {
+    &__item {
+      width: 100%;
+      padding: 15px;
+    }
+    &__wrap {
+      margin-top: 0;
+    }
+  }
+}
+</style>
