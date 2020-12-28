@@ -81,13 +81,11 @@
       </div>
     </transition>
     <modal-feedback
-      v-show="isVisibleFeedback"
-      v-changeScroll
+      v-if="isVisibleFeedback"
       @closeModal="isVisibleFeedback = false"
     />
     <modal-sign
-      v-show="isSignModal"
-      v-changeScroll
+      v-if="isSignModal"
       @closeModal="isSignModal = false"
     />
   </header>

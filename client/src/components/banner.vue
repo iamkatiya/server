@@ -41,7 +41,7 @@
       </carousel>
     </div>
     <modal
-      v-show="isVisibleModal"
+      v-if="isVisibleModal"
       v-changeScroll
       @close="closeModal"
     />

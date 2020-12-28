@@ -2,6 +2,7 @@
   <transition name="modal-fade">
     <div
       class="feedback-form"
+      v-changeScroll
     >
       <form
         v-if="loginForm"
