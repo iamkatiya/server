@@ -1,9 +1,16 @@
-var http = require('http');
-var static = require('node-static');
-var file = new static.Server('.');
+const express = require('express')
+const path = require('path')
 
-http.createServer(function(req, res) {
-  file.serve(req, res);
-}).listen(2000);
+const port = 3000
+const clientPath = path.join(__dirname, 'client')
 
-console.log('Server running on port 2000');
+const app = express()
+app.use(express.static(clientPath))
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
