@@ -7,8 +7,13 @@ const clientPath = path.join(__dirname, 'client')
 const app = express()
 app.use(express.static(clientPath))
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('/posts', (req, res) => {
+  res.send(
+    [{
+      title: "Hello World!",
+      description: "Hi there! How are you?"
+    }]
+  )
 })
 
 app.listen(port, () => {
