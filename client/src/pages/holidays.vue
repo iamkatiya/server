@@ -186,8 +186,8 @@ export default {
 
 <style lang="less">
   @import "../../node_modules/vue2-datepicker/index.css";
-  /*@import '../../node_modules/bootstrap/scss/bootstrap.scss';*/
-  /*@import '../../node_modules/bootstrap-vue/src/index.scss';*/
+  @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+  @import "../../node_modules/bootstrap-vue/dist/bootstrap-vue.css";
 
     h1 {
         font-size: 2em;
