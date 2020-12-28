@@ -9,10 +9,10 @@ Vue.config.productionTip = false
 
 Vue.directive('changeScroll', {
   bind () {
-    document.body.style.overflow = 'hidden'
+    // document.body.style.overflow = 'hidden'
   },
   unbind () {
-    document.body.style.overflow = 'auto'
+    // document.body.style.overflow = 'auto'
   }
 })
 
