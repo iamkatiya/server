@@ -9,12 +9,12 @@ const app = express()
 const json = require("./test")
 
 const jsonParser = express.json()
-app.get("/test", jsonParser, function (req, res) {
+app.post("/test", jsonParser, function (req, res) {
   if (!req.body) {
     return res.sendStatus(400)
   }
   let status = ''
-  if (json.data[0].login === req.query.login && json.data[0].password === req.query.password) {
+  if (json.data[0].login === req.body.login && json.data[0].password === req.body.password) {
     status = 'success'
   } else {
     status = 'error'
