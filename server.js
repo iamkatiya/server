@@ -3,10 +3,8 @@ const path = require('path')
 const engines = require('consolidate')
 
 const port = 3000
-const clientPath = path.join(__dirname, 'client')
 
 const app = express()
-app.use(express.static(clientPath))
 
 app.get('/posts', (req, res) => {
   res.send(
@@ -35,8 +33,6 @@ const staticOptions = {
     }
   },
 }
-
-app.use(require('body-parser').json({ limit: '10mb' }))
 
 app.engine('html', engines.swig)
 app.set('view engine', 'html')
