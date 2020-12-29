@@ -6,13 +6,20 @@ const port = 3000
 
 const app = express()
 
-app.get('/posts', (req, res) => {
-  res.send(
-    [{
-      title: "Hello World!",
-      description: "Hi there! How are you?"
-    }]
-  )
+const json = require("./test")
+
+const jsonParser = express.json()
+app.get("/test", jsonParser, function (req, res) {
+  if (!req.body) {
+    return res.sendStatus(400)
+  }
+  let status = ''
+  if (json.data[0].login === req.query.login && json.data[0].password === req.query.password) {
+    status = 'success'
+  } else {
+    status = 'error'
+  }
+  res.json(status)
 })
 
 app.listen(port, () => {
