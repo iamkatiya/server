@@ -8,6 +8,10 @@ const app = express()
 
 const json = require("./test")
 
+var cors = require('cors')
+
+app.use(cors())
+
 const jsonParser = express.json()
 app.post("/test", jsonParser, function (req, res) {
   if (!req.body) {
@@ -58,3 +62,4 @@ app.get('/' + '/*', index)
 
 module.exports = app
 app.use(express.static("dist"));
+
