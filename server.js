@@ -1,34 +1,35 @@
 const express = require('express')
+const debug = require('debug')
 const cors = require('cors')
 const path = require('path')
 const engines = require('consolidate')
 
 const port = 3000
 
-const app = require('./app')
+const app = require("./server/app")
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-const jsonParser = express.json()
-
+// const jsonParser = express.json()
 
 // for /test and /
-const json = require("./test")
+// const json = require("./test")
 
 app.use(cors())
 
-app.post("/test", jsonParser, function (req, res) {
-  if (!req.body) {
-    return res.sendStatus(400)
-  }
-  let status = ''
-  if (json.data[0].login === req.body.login && json.data[0].password === req.body.password) {
-    status = 'success'
-  } else {
-    status = 'error'
-  }
-  res.json(status)
-})
+// app.post("/test", jsonParser, function (req, res) {
+//   if (!req.body) {
+//     return res.sendStatus(400)
+//   }
+//   let status = ''
+//   if (json.data[0].login === req.body.login && json.data[0].password === req.body.password) {
+//     status = 'success'
+//   } else {
+//     status = 'error'
+//   }
+//   res.json(status)
+// })
 
 const staticOptions = {
   dotfiles: 'ignore',
