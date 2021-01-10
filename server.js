@@ -1,18 +1,22 @@
 const express = require('express')
+const cors = require('cors')
 const path = require('path')
 const engines = require('consolidate')
 
 const port = 3000
 
-const app = express()
+const app = require('./app')
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+const jsonParser = express.json()
 
+
+// for /test and /
 const json = require("./test")
-
-var cors = require('cors')
 
 app.use(cors())
 
-const jsonParser = express.json()
 app.post("/test", jsonParser, function (req, res) {
   if (!req.body) {
     return res.sendStatus(400)
@@ -24,10 +28,6 @@ app.post("/test", jsonParser, function (req, res) {
     status = 'error'
   }
   res.json(status)
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
 })
 
 const staticOptions = {
@@ -47,8 +47,8 @@ const staticOptions = {
 
 app.engine('html', engines.swig)
 app.set('view engine', 'html')
-
 app.set('views', [path.join(process.cwd(), 'node_modules/client/dist')])
+
 
 const index = function (req, res) {
   res.render('./index.html')
@@ -62,4 +62,5 @@ app.get('/' + '/*', index)
 
 module.exports = app
 app.use(express.static("dist"));
+
 
