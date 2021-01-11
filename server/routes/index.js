@@ -20,12 +20,12 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-/*Logout*/
-router.get('/logout', function (req, res) {
-    req.session.destroy(function (err) {
-        res.redirect('/');
-    });
-});
+// /*Logout*/
+// router.get('/logout', function (req, res) {
+//     req.session.destroy(function (err) {
+//         res.redirect('/');
+//     });
+// });
 
 /*POST for register*/
 router.post('/register', function (req, res) {
