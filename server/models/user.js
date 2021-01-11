@@ -2,6 +2,12 @@
 
 //Create the user schema
 const UserSchema = new mongoose.Schema({
+  userFirstname: {
+    type: String
+  },
+  userLastname: {
+    type: String
+  },
   username: {
     type: String
   },
