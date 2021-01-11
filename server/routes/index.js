@@ -6,6 +6,7 @@ var userModel = require('../models/user');
 var bcrypt = require('bcryptjs');
 
 //Try to login with passport
+
 router.post('/login', function(req, res, next) {
     passport.authenticate('login', function(err, user, info) {
         // console.log(user) // тут возвращается пользователь
@@ -13,8 +14,9 @@ router.post('/login', function(req, res, next) {
         if (!user) { return res.send('not found') }
         req.logIn(user, function(err) {
             if (err) { return next(err); }
-            return res.send('Success auth');
+            return res.send(user);
         });
+        req.session.user = user
     })(req, res, next);
 });
 
